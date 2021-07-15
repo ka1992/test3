@@ -19,3 +19,5 @@ myFunc1(100, function(price){
 myFunc1(200, function(price){
   console.log('결과 값은 : ' + price);
 })
+
+//test
