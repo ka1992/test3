@@ -1,33 +1,18 @@
 var http = require('http');
-var server = http.createServer(function(response, request){
-  response.end('cookie');
-});
+var server = http.createServer();
 
 var port = 3000;
 server.listen(port, function(){
   console.log('웹서버가 켜졌습니다. : ' + port);
-})
+});
 
-function
-         add(a, b, callback){
-  var result = a + b;
-  callback(result);
-}
+server.on('connection', function(socket){
+  console.log('클라이언트가 접속했습니다.');
+});
 
-add(10, 10, function(result){
-  console.log('결과 값은 : ' + result);
-})
-
-function myFunc1(num, callback){
- var price = num * 1040;
- callback(price);
-}
-
-myFunc1(100, function(price){
-  console.log('결과 값은 :' + price);
-})
-
-myFunc1(200, function(price){
-  console.log('결과 값은 : ' + price);
-})
-
+server.on('request', function(req, res){
+  console.log('클라이언트 요청이 들어 왔습니다.');
+  res.writeHead(200, {"Content-Type":"text/html;charset=utf8"});
+  res.write("<h1>응답</h1>");
+  res.end();
+});
