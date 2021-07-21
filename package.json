@@ -1,7 +1,8 @@
 {
-"name": "my-node-app-40",
+  "name": "my-node-app-40",
   "version": "1.0.0",
-  "dependencies": {
-
+  "dependencies": {},
+  "devDependencies": {
+    "cookie": "^0.4.1"
   }
 }
